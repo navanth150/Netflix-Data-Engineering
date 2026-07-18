@@ -1,0 +1,100 @@
+Landing CSV
+      │
+      ▼
+Bronze (Raw + Metadata)
+      │
+      ▼
+Silver (Cleaned + Standardized)
+      │
+      ▼
+Gold (Business Ready)
+
+Silver Layer
+
+        │
+
+        ▼
+
+Business Transformations
+
+        │
+
+        ▼
+
+Dimension Tables
+
+        │
+
+        ▼
+
+Fact Table
+
+        │
+
+        ▼
+
+Power BI
+
+
+                dim_type
+                    │
+                dim_rating
+                    │
+                dim_date
+                    │
+                    ▼
+              fact_titles
+              /         \
+             /           \
+bridge_title_genre   bridge_title_country
+         │                    │
+         ▼                    ▼
+    dim_genre           dim_country
+
+
+                Netflix CSV
+                     │
+                     ▼
+              OneLake (Files)
+                     │
+                     ▼
+      Notebook 1 - Bronze Ingestion
+                     │
+                     ▼
+     Notebook 2 - Data Quality Checks
+                     │
+                     ▼
+      Notebook 3 - Silver Transformation
+                     │
+                     ▼
+       Notebook 4 - Gold Transformation
+                     │
+                     ▼
+          Semantic Model Refresh
+                     │
+                     ▼
+           Power BI Dashboard
+
+┌────────────────────┐
+│ Bronze Ingestion   │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Data Quality Check │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Silver Transform   │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Gold Transform     │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ Semantic Refresh   │
+└────────────────────┘
